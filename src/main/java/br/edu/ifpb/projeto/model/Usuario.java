@@ -1,10 +1,22 @@
 package br.edu.ifpb.projeto.model;
 
+import org.hibernate.annotations.Type;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "usuarios")
 public class Usuario {
 
-    private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Type(type = "objectid")
+    private String id;
+
     private String nome;
+
     private String email;
+
     private String senha;
 
     public Usuario(String nome, String email, String senha) {
@@ -13,11 +25,11 @@ public class Usuario {
         this.senha = senha;
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -43,5 +55,15 @@ public class Usuario {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "id='" + id + '\'' +
+                ", nome='" + nome + '\'' +
+                ", email='" + email + '\'' +
+                ", senha='" + senha + '\'' +
+                '}';
     }
 }
