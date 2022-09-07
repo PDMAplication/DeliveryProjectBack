@@ -1,5 +1,7 @@
 package br.edu.ifpb.projeto.model;
 
+import br.edu.ifpb.projeto.repository.PedidoRepository;
+
 public class Usuario {
 
     private Long id;
@@ -43,5 +45,8 @@ public class Usuario {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public void adicionarPedidos(PedidoRepository pedidos) {
     }
 }
