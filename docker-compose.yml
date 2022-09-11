@@ -1,0 +1,30 @@
+version: '3.7'
+
+services:
+  db:
+    image: mysql:latest
+    container_name: projeto-delivery-mysql
+    ports:
+      - 3306:3306
+    volumes:
+      - data:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=projeto-delivery
+      - MYSQL_USER=projeto-delivery
+      - MYSQL_ROOT_PASSWORD=123456
+      - MYSQL_PASSWORD=123456
+
+  phpMyAdmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: projeto-delivery-phpmyadmin
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=db
+    links:
+      - db
+    ports:
+      - 80:80
+
+volumes:
+  data:
+  phpMyAdmin:
