@@ -2,16 +2,13 @@ package br.com.projeto.model;
 
 import lombok.*;
 import org.hibernate.validator.constraints.Length;
-import org.springframework.data.annotation.Id;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
-@Entity
 @Builder
+@Entity
 @EqualsAndHashCode
 @Getter
 @Setter

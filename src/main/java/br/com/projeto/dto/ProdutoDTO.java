@@ -10,14 +10,16 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class UsuarioDTO {
+public class ProdutoDTO {
 
-        private Long id;
+    private Long id;
 
-        private String nome;
+    private String nome;
 
-        private String email;
+    private BigDecimal valor;
 
-        private String senha;
+    private String descricao;
+
+    private String foto;
 
 }
